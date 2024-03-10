@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezolvare</title>
     <link rel="stylesheet" href="./css/rezolvare.css">
+    <script src="./js/file-preselected-lib.js"></script>
+    <script src="./js/file-index.js"></script>
     <script src="./js/rezolvare.js" defer></script>
 </head>
 
@@ -33,15 +35,13 @@ int main()
 }
             </textarea>
             <div>
-                <div style="display: flex; justify-content: space-evenly;">
-                    <label for="input2">
-                        Select files
-                        <input type="file" id="input2" style="display: none;">
-                    </label>
-                    <button onclick="clearrr(outputElement2)">Clear</button>
+                <div class="manual-select">
+                    <input type="file" id="input2">
                 </div>
-                <br>
-                <button onclick="saveToFile('cplasplas')">Save to File</button>
+                <div class="manual-select">
+                    <button onclick="clearrr_cpp()">Clear</button>                    
+                    <button onclick="saveToFile('cplasplas')">Save to File</button>
+                </div>           
                 <br>
                 <a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank">Acceseaza compiler-ul C++ Online
                     GDB</a>
@@ -57,15 +57,13 @@ begin
 end.
             </textarea>
             <div>
-                <div style="display: flex; justify-content: space-evenly;">
-                    <label for="input3">
-                        Select files
-                        <input type="file" id="input3" style="display: none;">
-                    </label>
-                    <button onclick="clearrr(outputElement3)">Clear</button>
+                <div class="manual-select">
+                    <input type="file" id="input3">
                 </div>
-                <br>
-                <button onclick="saveToFile('pas')">Save to File</button>
+                <div class="manual-select">
+                    <button onclick="clearrr_pascal()">Clear</button>
+                    <button onclick="saveToFile('pas')">Save to File</button>
+                </div>
                 <br>
                 <a href="https://www.onlinegdb.com/online_pascal_compiler" target="_blank">Acceseaza compiler-ul Pascal
                     Online GDB</a>
@@ -83,21 +81,45 @@ end.
                 </div> -->
             <div class="input">
                 <h4 style="margin: 0; text-align: center;">Fisiere preselectate:</h4>
-                <div class="preselected">
-                    <ul id="clase">
-                        <li>Clasa 5</li>
-                        <li>Clasa 6</li>
-                        <li>Clasa 7</li>
-                        <li>Clasa 8</li>
-                        <li>Clasa 9</li>
-                    </ul>
+                <div id="preselected-div" class="preselected">
+                    <div>
+                        <div class="radio-button">
+                            <input type="radio" name="classesRadio" id="classRadio5" value="clasa5/Solutii" checked>
+                            <label for="classRadio5">
+                                Clasa 5
+                            </label>
+                        </div>
+                        <div class="radio-button">
+                            <input type="radio" name="classesRadio" id="classRadio6" value="clasa6/Solutii">
+                            <label for="classRadio6">
+                                Clasa 6
+                            </label>
+                        </div>
+                        <div class="radio-button">
+                            <input type="radio" name="classesRadio" id="classRadio7" value="clasa7/Solutii">
+                            <label for="classRadio7">
+                                Clasa 7
+                            </label>
+                        </div>
+                        <div class="radio-button">
+                            <input type="radio" name="classesRadio" id="classRadio8" value="clasa8/Solutii">
+                            <label for="classRadio8">
+                                Clasa 8
+                            </label>
+                        </div>
+                        <div class="radio-button">
+                            <input type="radio" name="classesRadio" id="classRadio9" value="clasa9/Solutii">
+                            <label for="classRadio9">
+                                Clasa 9
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <h4 style="margin: 0; text-align: center;">Selectati fisierele manual:</h4>
                 <div class="manual-select">
-                    <label for="input">
-                        Select files
-                        <input type="file" id="input" style="display: none;" multiple>
-                    </label>
+                    <input type="file" id="input" multiple>
+                </div>
+                <div class="manual-select">
                     <button id="clear">Clear</button>
                     <button onclick="saveToFile('output')">Save to File</button>
                 </div>
