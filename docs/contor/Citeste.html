@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>MarPlo.net - Script contor vizitatori unici si accesari</title>
+</head>
+<body>
+
+<center><h2>Script contor vizitatori unici si accesari</h2></center>
+<h4><u>Contor 1</u></h4>
+Scriptul din "<b>contor1.php</b>" poate fi folosit numai in pagini generate cu PHP.<br><br>
+1. Copiati pe server fisierele "<b>contor1.php</b>" si "<b>contor.txt</b>", in acelasi director in care se afla fisierele dv. PHP in care doriti sa adaugati acest script.<br>
+2. In aceste fisiere, adaugati la inceputul lor urmatorul cod (<i>dupa session_start(); - daca aveti cumva aceasta comanda la inceputul fisierului</i>):
+	<ul><b> &lt;?php include('contor1.php'); ?&gt; </b></ul>
+3. In locul unde doriti sa afisati contorul, adaugati urmatorul cod PHP:
+	<ul><b> echo $contor_out;</b></ul>
+4. Acordati fisierului "<b>contor.txt</b>" proprietati CHMOD (0766), drepturi depline citire si scriere.<br><br>
+
+<h4><u>Contor 2</u></h4>
+Scriptul din "<b>contor2.php</b>" poate fi folosit atat in pagini generate cu PHP cat si in pagini statice, de tip HTML.<br>
+Pentru executarea scriptului este nevoie de un server cu PHP, dar scriptul poate fi apelat, printr-un cod JavaScript si din pagini statice HTML sau pagini exterioare serverului.<br><br>
+1. Copiati pe server fisierele "<b>contor2.php</b>" si "<b>contor.txt</b>"<br>
+2. Acordati fisierului "<b>contor.txt</b>" proprietati CHMOD (0766), drepturi depline citire si scriere.<br>
+3. In paginile unde doriti sa fie afisat contor-ul adaugati urmatorul cod:
+	<ul><pre><b>
+&lt;div id=&quot;id_ctr&quot; style=&quot;background:#dedefe; width:150px; border:1px solid #bbbbbb; padding:2px;&quot; align=&quot;center&quot;&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;http://<i><u>site-ul.dv/</u></i>contor2.php?pg=<i><u>nume</u></i>&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+	</b></pre></ul>
+	- <i><b>site-ul.dv/</b></i> este numele site-ului si directorul unde copiati acest script, iar la <i><b>nume</b></i> scrieti pentru fiecare pagina unde adaugati acest cod cate un nume diferit
+	<ul>Exemplu: <i>src="http://www.marplo.net/contor/contor2.php?pg=pagina1"</i></ul>
+	- Div-ul cu "<b>id="id_ctr"</b>" este cadrul in care e afisat contorul, acesta poate fi personificat grafic de fiecare in functie de pagina.<br><br>
+  &bull; Puteti testa si verifica pagina "test.html" (de pe server, ex.: <i>http://localhost/test.html</i> ).<br><br><br>
+
+	MarPlo<br>
+	<a href="http://www.marplo.net" title="Cursuri, Jocuri, Anime">www.marplo.net</a>
+	<br>
+</body>
+</html>

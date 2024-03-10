@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+  // comentariu - defenim viteza primului tren, ca valoare intreaga
+    int v1;
+   // scriem formula de calcul a vitezei primului tren, fara a utiliza unitatile de masura, si fara calcul
+     v1 = 300 / 5;
+     // defenim timpul, cat a mers primul tren, pana cand a fost ajuns de al doilea tren, ca valoare intreaga
+    int t; 
+  // scriem formula de calcul a timpului, cat a mers primul tren, pana cand a fost ajuns de al doilea tren
+     t = (300 - 120) / v1;
+   // defenim viteza celui de-al doilea tren, ca valoare intreaga
+     int v2;
+   // scriem formula de calcul a vitezei celui de-al doilea tren
+     v2 = (300 - 120) / (t - 1);
+    // afisam rezultatul calculului vitezei trenului al diolea
+    cout<<" Viteza trenului al doilea este = "<<v2;
+
+    return 0;
+}
+        

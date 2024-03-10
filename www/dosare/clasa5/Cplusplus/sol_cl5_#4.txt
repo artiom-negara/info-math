@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+   // comentariu - definim viteza cu care se deplaseaza Barbu si o calculam, fara a  folosi unitatile de masura
+    int V2 = 25 + 3;
+   // definim si calculam distanta parcursa de ambii ciclisti intr-o ora
+    int SH = (25 + V2) * 1;      
+  // definim timpul care a trecut pana la intalnirea bicilistilor 
+     int T;
+  // reiesind din datele problemei, calculam T
+    T = 212 - 4;
+   // definim timpul, cat a mers al doilea pieton 
+    int T1; 
+  // scriem formula de calcul a timpului
+     T1 = 212 / (SH / 1);
+   // definim distanta pe care a parcurs primul biciclist si o calculam
+      int S1 = T1 * 25;
+     // afisam rezultatul calculului distantei  parcurse de primul biciclist si timpul parcurs de el
+    cout<<" Distanta este = "<<S1<<"  km"<<endl;   // endl - instructiune de trecere la inceputul randului urmator
+    cout<<" Timpul este = "<<T1<<"  ore";
+
+    return 0;
+}
+        

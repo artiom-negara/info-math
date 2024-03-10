@@ -1,0 +1,237 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: rgb(230, 255, 254);
+    font-family: sans-serif;
+}
+
+.nav {
+    width: 100%;
+    margin: 0;
+    background-color: gray;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+#nav {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+#nav > li {
+    padding: 0.5rem 1rem;
+}
+
+li > a {
+    text-decoration: none;
+    color: white;
+}
+ 
+#nav > li:hover {
+    background-color: rgb(99, 99, 99);
+    cursor: pointer;
+}
+
+
+.page {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: minmax(0, 0.3fr) minmax(0, 2fr) minmax(0, 4fr) minmax(0, 2fr) minmax(0, 0.3fr);
+    grid-template-rows: minmax(0, 0.1fr) minmax(0, 3fr) minmax(0, 0.3fr);
+}
+
+.cpp {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.5rem;
+    text-align: center;
+    border: 0.3rem solid blue;
+}
+
+.content {
+    grid-column: 3;
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.pascal {
+    grid-column: 4;
+    grid-row: 2;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.5rem;
+    text-align: center;
+    border: 0.3rem solid blue;
+
+}
+
+label {
+    padding: 0.5rem 0.8rem;
+    color: white;
+    background-color: rgb(26, 115, 232);
+    border: none;
+    border-radius: 0.75rem;
+    transition-duration: 50ms;
+    font-family: sans-serif;
+}
+
+label:hover {
+    background-color: rgb(2, 77, 173);
+}
+
+.input {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border: 0.3rem solid blue;
+    border-radius: 1rem;
+}
+
+.output {
+    margin: 0.1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+    gap: 0.2rem;
+}
+
+.conditie {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.conditie > div {
+    display: flex;
+}
+
+.conditie > div > textarea {
+    flex: 1;
+}
+
+.rezolvare {
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.files {
+    grid-column: 2;
+}
+
+#file-list {
+    background-color: rgb(255, 255, 255);
+    border: 0.3rem solid black;
+    padding: 1rem;
+    border-radius: 1rem;
+    list-style-type: none;
+    overflow: auto;
+}
+
+#file-list > li {
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    cursor: pointer;
+    background-color: rgb(231, 231, 231);
+    overflow-wrap: break-word;
+}
+
+#file-list > li:hover {
+    background-color: rgb(201, 199, 199);
+}
+
+.manual-select {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+}
+
+button {
+    padding: 0.5rem 0.8rem;
+    color: white;
+    background-color: rgb(26, 115, 232);
+    border: none;
+    border-radius: 0.75rem;
+    transition-duration: 50ms;
+    font-family: sans-serif;
+    font-size: inherit;
+}
+
+button:hover {
+    background-color: rgb(2, 77, 173);
+}
+
+textarea {
+    margin: 0;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 0.75rem;
+    border: 0.1rem solid black;
+    background-color: rgb(228, 228, 228);
+    resize: none;
+}
+
+.main {
+    margin: 0;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#clase {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+#clase > li {
+    padding: 0.5rem 0.8rem;
+    color: white;
+    background-color: rgb(26, 115, 232);
+    border: none;
+    border-radius: 0.75rem;
+    transition-duration: 50ms;
+}
+
+#clase > li:hover {
+    cursor: default;
+    background-color: rgb(2, 77, 173);
+}
+
+fieldset {
+    border: none;
+}
+
+.commentForm {
+    text-align: center;
+    padding: 1rem 3rem;
+    border: 0.3rem solid black;
+}
+
+.linc {
+    grid-row: 3;
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+}

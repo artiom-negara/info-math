@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+  // defenim marimile propuse in problema 
+    int STotal, T, X, S1, T1, V1, V2 ;
+   // T1 - timpul cat a mers primul tren, pana cand a fost ajuns de al doilea tren
+   // V1 - viteza primului tren, V2 - viteza trenului al doilea
+   // introducem de la tastatura datele din problema
+    cout<<"Introdu distanta totala intre orase, = "; cin>>STotal;
+    cout<<"Introdu timpul total intre orase, = "; cin>>T;
+    cout<<"Introdu numarul de ore, dupa care a fost ajuns primul tren, = "; cin>>X;
+    cout<<"Introdu distanta pana la statia intermediara, de la orasul B, = "; cin>>S1;
+
+   // scriem formula de calcul a vitezei primului tren, fara a utiliza unitatile de masura
+     V1 = STotal / T; 
+     T1 = (STotal - S1) / V1;
+     V2 = (STotal - S1) / (T1 - X);
+    // afisam rezultatul calculului vitezei trenului al diolea
+    cout<<" Viteza trenului al doilea este = "<<V2;
+
+    return 0;
+}
+        

@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+   // comentariu - definim distanta dintre pe care o are de recuperat primul pieton , dar fara a folosi unitatile de masura
+    int S1;
+   // calculam distanta de recuperare a primului pieton, fara a folosi unitatea de masura (km)
+    S1= 2*4;      
+  // definim viteza cu care se deplaseaza mai repede al doilea pieton decat primul 
+     int V2;
+  // reiesind din datele problemei, calculam V2
+    V2 = 6 - 4;
+   // definim timpul, cat a mers al doilea pieton 
+    int T2; 
+  // scriem formula de calcul a timpului
+     T2 = S1 / V2;
+   // definim distanta intre orasele propuse, ca o valoare intreaga
+      int S;       
+     // calculam distanta intre cele doua orase
+      S = 6 * T2;
+     // afisam rezultatul calculului distantei intre cele doua orase
+    cout<<" Distanta intre orase este = "<<S<<"  km";
+
+    return 0;
+}
+        
