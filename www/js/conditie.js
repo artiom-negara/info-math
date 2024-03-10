@@ -11,14 +11,21 @@ inputElement.addEventListener('change', () => {
 });
 
 clearButton.addEventListener('click', () => {
+    // Reset the input element
+    inputElement.value = '';
+
+    // Clear the output area
     outputElement.value = '';
+    // Hide and clear the fileList
     while (fileList.firstChild) {
-        fileList.style.display = 'none';
         fileList.removeChild(fileList.firstChild);
-        outputElement.style.display = 'inline-block';
-        outputImage.style.display = 'none';
-        outputPdf.style.display = 'none';
     }
+    fileList.style.display = 'none';
+
+    // Reset display styles for output elements
+    outputElement.style.display = 'inline-block';
+    outputImage.style.display = 'none';
+    outputPdf.style.display = 'none';
 });
 
 function handleClassSelection(event) {
