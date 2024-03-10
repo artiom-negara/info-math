@@ -5,8 +5,12 @@ const outputImage = document.getElementById('img');
 const outputPdf = document.getElementById('viewer');
 const fileList = document.getElementById('file-list');
 const clearButton = document.getElementById('clear');
+const preselectedDiv = document.getElementById('preselected-div');
+
+var preselectedFiles = []
 
 inputElement.addEventListener('change', () => {
+    clearPreselectedFiles();
     handleFiles(inputElement.files);
 });
 
@@ -26,13 +30,29 @@ clearButton.addEventListener('click', () => {
     outputElement.style.display = 'inline-block';
     outputImage.style.display = 'none';
     outputPdf.style.display = 'none';
+
+    clearPreselectedFiles();
 });
 
-function handleClassSelection(event) {
-    // Access the value of the radio button that was changed
-    var selectedValue = event.target.value;
-    console.log(`Selected class: ${selectedValue}`);
-    // Perform actions based on selectedValue
+preselectedDiv.querySelectorAll('input[type="radio"][name="classesRadio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        if (this.checked) {
+            preselectedFiles = handleClassSelection(this.value);
+            fetchAndLoadPreselectedFiles(preselectedFiles);
+        }
+    });
+    // Check if this radio button is already checked and trigger the function accordingly
+    if (radio.checked) {
+        preselectedFiles = handleClassSelection(radio.value);
+        fetchAndLoadPreselectedFiles(preselectedFiles);
+    }
+});
+
+
+function clearPreselectedFiles() {
+    preselectedDiv.querySelectorAll('input[type="radio"][name="classesRadio"]').forEach(radio => {
+        radio.checked = false;
+    });
 }
 
 function clearrr(target) {
@@ -108,4 +128,29 @@ function saveToFile(source) {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
+}
+
+function fetchAndLoadPreselectedFiles(preselectedFiles) {
+
+    // Assuming preselectedFiles is an array of file paths to be loaded
+    const fetchFilePromises = preselectedFiles.map(filePath =>
+        fetch(filePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch file: ${filePath}`);
+            }
+            return response.blob();
+        })
+        .then(blob => new File([blob], filePath.split('/').pop(), { type: blob.type }))
+    );
+
+    // Wait for all files to be fetched and converted to File objects
+    Promise.all(fetchFilePromises)
+    .then(files => {
+        // Now 'files' is an array of File objects
+        handleFiles(files);
+    })
+    .catch(error => {
+        console.error('Error fetching files:', error);
+    });
 }
