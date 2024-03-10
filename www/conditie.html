@@ -53,20 +53,45 @@ end.
         <div class="content">
 
             <div class="output">
-                
+
                 <div class="input">
                     <h4 style="margin: 0; text-align: center;">Fisiere preselectate:</h4>
                     <div class="preselected">
-                        <ul id="clase">
-                            <li>Clasa 5</li>
-                            <li>Clasa 6</li>
-                            <li>Clasa 7</li>
-                        </ul>
-                        <ul id="clase">
-                            <li>Clasa 8</li>
-                            <li>Clasa 9</li>
-                        </ul>
+                        <div>
+                            <div class="radio-button">
+                                <input type="radio" name="classesRadio" id="classRadio5" value="5" checked onchange="handleClassSelection(event)">
+                                <label for="classRadio5">
+                                    Clasa 5
+                                </label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="classesRadio" id="classRadio6" value="6" onchange="handleClassSelection(event)">
+                                <label for="classRadio6">
+                                    Clasa 6
+                                </label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="classesRadio" id="classRadio7" value="7" onchange="handleClassSelection(event)">
+                                <label for="classRadio7">
+                                    Clasa 7
+                                </label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="classesRadio" id="classRadio8" value="8" onchange="handleClassSelection(event)">
+                                <label for="classRadio8">
+                                    Clasa 8
+                                </label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="classesRadio" id="classRadio9" value="9" onchange="handleClassSelection(event)">
+                                <label for="classRadio9">
+                                    Clasa 9
+                                </label>
+                            </div>
+                        </div>
                     </div>
+
+
                     <h4 style="margin: 0; text-align: center;">Selectati fisierele manual:</h4>
                     <div class="manual-select">
                         <input type="file" id="input" multiple>

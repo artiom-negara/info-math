@@ -263,3 +263,33 @@ fieldset {
 #comment {
     width: 50%;
 }
+
+.preselected {
+    padding: 0.8rem 0.3rem 2.0rem 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the children horizontally in the container */
+}
+
+/* Add this rule for the cursor change on hover */
+.preselected .radio-button label {
+    display: inline-block; /* Allows setting a width and centering text */
+    width: 60px; /* Example fixed width; adjust based on your content */
+    text-align: center; /* Center the text within the fixed width */
+    transition: all 0.3s ease; /* Smooth transition for color and background changes */
+}
+
+.preselected .radio-button label:hover {
+    cursor: pointer;
+    color: rgb(2, 77, 173); /* Adjust color to indicate hover state */
+    font-weight: bold; /* Make the text bold on hover */
+}
+
+.preselected input[type=radio]:hover{
+    cursor: pointer;
+}
+
+.radio-button {
+    padding: 0.3rem 0rem;
+    margin: 0rem 0.4rem;
+}

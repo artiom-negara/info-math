@@ -6,13 +6,9 @@ const outputPdf = document.getElementById('viewer');
 const fileList = document.getElementById('file-list');
 const clearButton = document.getElementById('clear');
 
-inputElement.addEventListener('change', handleFiles);
-const reader = new FileReader();
-
-
-reader.addEventListener('load', () => {
-    outputElement.value = reader.result;
-}, false);
+inputElement.addEventListener('change', () => {
+    handleFiles(inputElement.files);
+});
 
 clearButton.addEventListener('click', () => {
     outputElement.value = '';
@@ -25,49 +21,67 @@ clearButton.addEventListener('click', () => {
     }
 });
 
+function handleClassSelection(event) {
+    // Access the value of the radio button that was changed
+    var selectedValue = event.target.value;
+    console.log(`Selected class: ${selectedValue}`);
+    // Perform actions based on selectedValue
+}
+
 function clearrr(target) {
     target.value = '';
 }
 
-function handleFiles() {
+function handleFiles(filesArray) {
+    fileList.style.display = 'block'; // Show the list
+    fileList.innerHTML = ''; // Clear existing list items
 
-    for (const file of inputElement.files) {
+    Array.from(filesArray).forEach(file => {
         console.log(file.type);
 
-        fileList.style.display = 'block';
-        fileElement = document.createElement('li');
+        let fileElement = document.createElement('li');
         fileElement.innerText = file.name;
 
         fileElement.addEventListener('click', () => {
-            if (file.type === 'text/plain') {
-                reader.readAsText(file);
-                outputElement.style.display = 'inline-block';
-                outputImage.style.display = 'none';
-                outputPdf.style.display = 'none';
-            }
+            const reader = new FileReader();
 
-            else if (file.type === 'image/jpeg' || file.type === 'image/png') {
-                outputImage.src = URL.createObjectURL(file);
-                outputImage.onload = () => {
-                    URL.revokeObjectURL(outputImage.src);
+            reader.onload = () => {
+                if (file.type === 'text/plain') {
+                    outputElement.value = reader.result;
+                    outputElement.style.display = 'inline-block';
+                    outputImage.style.display = 'none';
+                    outputPdf.style.display = 'none';
+                }
+                else if (file.type.startsWith('image/')) { // Covering both jpeg and png
+                    outputImage.src = URL.createObjectURL(file);
+                    outputImage.onload = () => {
+                        URL.revokeObjectURL(outputImage.src); // Clean up memory
+                    };
                     outputImage.style.display = 'block';
                     outputElement.style.display = 'none';
                     outputPdf.style.display = 'none';
-                };
-            }
+                }
+                else if (file.type === 'application/pdf') {
+                    const objUrl = URL.createObjectURL(file);
+                    outputPdf.src = objUrl;
+                    outputPdf.onload = () => {
+                        URL.revokeObjectURL(objUrl); // Clean up memory
+                    };
+                    outputImage.style.display = 'none';
+                    outputElement.style.display = 'none';
+                    outputPdf.style.display = 'block';
+                }
+            };
 
-            else if (file.type === 'application/pdf') {
-                const obj_url = URL.createObjectURL(file);
-                outputPdf.setAttribute("src", obj_url);
-                URL.revokeObjectURL(obj_url);
-                outputImage.style.display = 'none';
-                outputElement.style.display = 'none';
-                outputPdf.style.display = 'inline-block';
+            if (file.type === 'text/plain') {
+                reader.readAsText(file);
+            } else if (file.type.startsWith('image/') || file.type === 'application/pdf') {
+                reader.readAsDataURL(file); // For images and PDFs, load as data URL
             }
         });
 
         fileList.appendChild(fileElement);
-    }
+    });
 }
 
 function saveToFile(source) {
