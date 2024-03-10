@@ -45,7 +45,7 @@ function handleFiles() {
                 outputImage.style.display = 'none';
                 outputPdf.style.display = 'none';
             }
-        
+
             else if (file.type === 'image/jpeg' || file.type === 'image/png') {
                 outputImage.src = URL.createObjectURL(file);
                 outputImage.onload = () => {
@@ -53,9 +53,9 @@ function handleFiles() {
                     outputImage.style.display = 'block';
                     outputElement.style.display = 'none';
                     outputPdf.style.display = 'none';
-              };
+                };
             }
-        
+
             else if (file.type === 'application/pdf') {
                 const obj_url = URL.createObjectURL(file);
                 outputPdf.setAttribute("src", obj_url);
@@ -67,7 +67,7 @@ function handleFiles() {
         });
 
         fileList.appendChild(fileElement);
-    }  
+    }
 }
 
 function saveToFile(source) {

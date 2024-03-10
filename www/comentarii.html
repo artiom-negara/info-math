@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comentarii</title>
     <link rel="stylesheet" href="./css/comentarii.css">
 </head>
+
 <body>
     <div class="nav">
         <ul id="nav">
@@ -18,94 +20,100 @@
 
     <div class="commentForm">
         <a name="comments"></a>
-                <h3 class="icons"><i class="material-icons">&#xE150;</i> Lasa un raspuns</h3>
-                <h5>Informatiile scrise aici sunt confidentiale.<br />
-                Adresa de email data nu va fi publicata niciodata. De asemenea, toate informatiile furnizate nu vor fi partajate cu terte persoane.</h5>
-                <form action="http:\\gmail.com" method="post">
-                  <fieldset>
-                      <label for="name">Nume:</label>
-                      <input type="text" class="input" id="name" name="nume_comentariu" value="" placeholder="nume si prenumele dvs." />
-                  </fieldset>
-                  <fieldset>
-                    <label for="email">Email:<sup>*</span></sup>
-                                <input type="text" class="input" id="email_comentariu" name="email_comentariu" value="" placeholder="adresa de email" />
-                  </fieldset>
-                  <br />
-                  <fieldset>
-                              </fieldset>
-                  <p class="fokus_comm_spam">
-                    <h3 style="margin: 0; padding: 0;">Alegeti fisierul</h3>
-                    <br>
-                    <input type="file"/></p>
-                  <fieldset>
-                                
-                    <textarea rows="8" class="textarea" id="comment" name="comentariu" placeholder="Va rugam sa adaugati aici comentariul dvs."></textarea>
-                  </fieldset>
-                  
-                            <div class="g-recaptcha" data-sitekey="6Lc-4lUUAAAAAGGdjeXo74-T2C1eXtxlhtzqfDM1"></div><br>
-        
-                               <div style="font-size:10px; margin-top:10px;">
-                         <input type="checkbox" value="Nu" onclick="javascript:if(this.checked){this.value='Da'}else{this.value='Nu'};" id="accept_comunicari" name="accept_comunicari" > Da, vreau informatii despre produsele Rentrop&Straton. Sunt de acord ca datele personale sa fie prelucrate conform <a href="https://www.marketingportal.ro/pagini/termeni_si_conditii/125/" target="_blank" style=" color: #606060;text-decoration: underline;">Regulamentul UE 679/2016</a> 
-                     </div>
-        
-        
-        
-        
-        
-         <input style="cursor: pointer;" type="submit" class="button" id="trimite_comment" name="trimite_comment" value="Trimite" />
-                </form>
-                
-                </div><!--commentForm--> 
-        </div><!--commentBox-->     
-        <script>
-                    $(function() {
-                        $(document).ready(function() {
-                            $('.article').on('copy', function() {
-                                $("#showCopyright").css("display", "block").fadeIn(400);
-                            });
-                            $("#thover").click(function() {
-                                $(this).fadeOut();
-                                $("#tpopup").fadeOut();
-                            });
-        
-                            $("#tclose").click(function() {
-                                $("#thover").fadeOut();
-                                $("#tpopup").fadeOut();
-                                
-                            });
-        
-                        });
+        <h3 class="icons"><i class="material-icons">&#xE150;</i> Lasa un raspuns</h3>
+        <h5>Informatiile scrise aici sunt confidentiale.<br />
+            Adresa de email data nu va fi publicata niciodata. De asemenea, toate informatiile furnizate nu vor fi
+            partajate cu terte persoane.</h5>
+        <form action="http:\\gmail.com" method="post">
+            <fieldset>
+                <label for="name">Nume:</label>
+                <input type="text" class="input" id="name" name="nume_comentariu" value=""
+                    placeholder="nume si prenumele dvs." />
+            </fieldset>
+            <fieldset>
+                <label for="email">Email:<sup>*</span></sup>
+                    <input type="text" class="input" id="email_comentariu" name="email_comentariu" value=""
+                        placeholder="adresa de email" />
+            </fieldset>
+            <br />
+            <fieldset>
+            </fieldset>
+            <p class="fokus_comm_spam">
+            <h3 style="margin: 0; padding: 0;">Alegeti fisierul</h3>
+            <br>
+            <input type="file" /></p>
+            <fieldset>
+
+                <textarea rows="8" class="textarea" id="comment" name="comentariu"
+                    placeholder="Va rugam sa adaugati aici comentariul dvs."></textarea>
+            </fieldset>
+
+            <div class="g-recaptcha" data-sitekey="6Lc-4lUUAAAAAGGdjeXo74-T2C1eXtxlhtzqfDM1"></div><br>
+
+            <div style="font-size:10px; margin-top:10px;">
+                <input type="checkbox" value="Nu"
+                    onclick="javascript:if(this.checked){this.value='Da'}else{this.value='Nu'};" id="accept_comunicari"
+                    name="accept_comunicari"> Da, vreau informatii despre produsele Rentrop&Straton. Sunt de acord ca
+                datele personale sa fie prelucrate conform <a
+                    href="https://www.marketingportal.ro/pagini/termeni_si_conditii/125/" target="_blank"
+                    style=" color: #606060;text-decoration: underline;">Regulamentul UE 679/2016</a>
+            </div>
+
+
+
+
+
+            <input style="cursor: pointer;" type="submit" class="button" id="trimite_comment" name="trimite_comment"
+                value="Trimite" />
+        </form>
+
+    </div><!--commentForm-->
+    </div><!--commentBox-->
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                $('.article').on('copy', function () {
+                    $("#showCopyright").css("display", "block").fadeIn(400);
                 });
-                </script> 	
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-            <div class="info_bottom">			
-            <!-- AddThis Button BEGIN -->
-            <div class="col2" style="min-height:130px;">
-                <div class="title">Ti-a placut acest articol?<br/> Recomanda-l prietenilor:</div>
-                    <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons" style="margin-top:5px; margin-bottom:5px;"></div><!-- ShareThis END -->
-            </div>
-            <!-- AddThis Button END -->	
-                <div class="col2" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                <meta itemprop="itemreviewed" content="Top 50 cele mai vizitate site-uri din lume" />   
-                <span class="title">Cat de utila va este aceasta informatie?<br />Noteaza folosind stelele</span><br />
-                <strong style="float:left;line-height:34px;margin-right:10px;">Rating:</strong> <div class="rateit" data-productid="5241" data-rateit-value="3.21" data-rateit-ispreset="true"></div><br /><br />
-                <div id="rateresponse"><strong>Nota: 
-                            <span itemprop="ratingValue">3.21</span>
-                            din <span itemprop="bestRating">5</span>
-                        </strong> - <span itemprop="ratingCount">12</span> voturi.</div>
-            </div>
-        
-        
-        
+                $("#thover").click(function () {
+                    $(this).fadeOut();
+                    $("#tpopup").fadeOut();
+                });
+
+                $("#tclose").click(function () {
+                    $("#thover").fadeOut();
+                    $("#tpopup").fadeOut();
+
+                });
+
+            });
+        });
+    </script>
+
+
+    <div class="info_bottom">
+        <!-- AddThis Button BEGIN -->
+        <div class="col2" style="min-height:130px;">
+            <div class="title">Ti-a placut acest articol?<br /> Recomanda-l prietenilor:</div>
+            <!-- ShareThis BEGIN -->
+            <div class="sharethis-inline-share-buttons" style="margin-top:5px; margin-bottom:5px;"></div>
+            <!-- ShareThis END -->
+        </div>
+        <!-- AddThis Button END -->
+        <div class="col2" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="itemreviewed" content="Top 50 cele mai vizitate site-uri din lume" />
+            <span class="title">Cat de utila va este aceasta informatie?<br />Noteaza folosind stelele</span><br />
+            <strong style="float:left;line-height:34px;margin-right:10px;">Rating:</strong>
+            <div class="rateit" data-productid="5241" data-rateit-value="3.21" data-rateit-ispreset="true"></div>
+            <br /><br />
+            <div id="rateresponse"><strong>Nota:
+                    <span itemprop="ratingValue">3.21</span>
+                    din <span itemprop="bestRating">5</span>
+                </strong> - <span itemprop="ratingCount">12</span> voturi.</div>
+        </div>
+
+
+
         <!-- <?php
         // Acest script calculeaza si afiseaza nmumarul de deschideri a unei pagini
         
@@ -134,6 +142,7 @@
         
         @flock($fh, LOCK_UN);   // Deblocheaza fisierul
         fclose($fh);   // Inchide fisierul -->
-        
+
 </body>
+
 </html>
